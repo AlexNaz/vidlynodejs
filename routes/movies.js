@@ -24,7 +24,7 @@ router.post('/', async(req,res) => {
     },
    numberInStock: req.body.numberInStock,
    dailyRentalRate: req.body.dailyRentalRate
-  })
+  });
   movie = await movie.save();
   res.send(movie);
 });
@@ -34,7 +34,7 @@ router.post('/', async(req,res) => {
 //   if(error) return res.status(400).send(error.details[0].message);
 
 //   const movie = await Movie.findByIdAndUpdate(req.params.id,
-//    { 
+//    {
 //      title: req.body.title,
 //      numberInStock: req.body.numberInStock,
 //      genre: {
@@ -53,7 +53,7 @@ router.post('/', async(req,res) => {
 // });
 
 router.put('/:id', async (req, res) => {
-  const { error } = validate(req.body); 
+  const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
   const genre = await Genre.findById(req.body.genreId);
@@ -61,7 +61,7 @@ router.put('/:id', async (req, res) => {
 
   try {
     const movie = await Movie.findByIdAndUpdate(req.params.id,
-      { 
+      {
       title: req.body.title,
       genre: {
         _id: genre._id,

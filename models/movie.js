@@ -21,7 +21,7 @@ const movieSchema = new mongoose.Schema({
     type: genresSchema,
     required: true
   }
-});  
+});
 const Movie = mongoose.model('Movie', movieSchema);
 
 function validateMovie(movie) {
@@ -30,7 +30,7 @@ function validateMovie(movie) {
     numberInStock: Joi.number().required(),
     dailyRentalRate: Joi.number().required(),
     genreId: Joi.string().required()
-  }
+  };
   return Joi.validate(movie, schema);
 }
 

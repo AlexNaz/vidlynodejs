@@ -8,7 +8,7 @@ const debug = require('debug')('app:startup');
 const genres = require('./routes/genres');
 const movies = require('./routes/movies');
 const home = require('./routes/home');
-const customers = require('./routes/customers')
+const customers = require('./routes/customers');
 const app = express();
 
 const mongoose = require('mongoose');

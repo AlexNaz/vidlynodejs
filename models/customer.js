@@ -8,13 +8,13 @@ const customersSchema = new mongoose.Schema({
   },
   name: {
     type: String,
-    equired: true,
+    required: true,
     minLength: 5,
     maxLength: 30
   },
   phone: {
     type: String,
-    equired: true,
+    required: true,
     minLength: 5,
     maxLength: 30
   }
